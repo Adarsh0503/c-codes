@@ -1,0 +1,130 @@
+#include <stdio.h>
+int glob_var;
+
+// Function declaration
+int add_fun(int, int);
+
+void main()
+{
+int a, a1, a2, a3 = 0, i;
+auto int b1 = 500;
+float b;
+char c;
+
+printf("\nThe value of global variable glob_var : ");
+printf("%d", glob_var);
+
+glob_var = 10000;
+
+printf("\nThe value of b1 inside start of main function : ");
+printf("%d", b1);
+// static int a3 = 5;
+a = 5;
+b = 0.7;
+c = 'J';
+//scanf("%d", &a);
+printf("\nAddress of a:");
+printf("%d", &a);
+printf("\nValue of a:");
+printf("%d", a);
+
+printf("\nAddress of b:");
+printf("%d", &b);
+printf("\nValue of b:");
+printf("%f", b);
+
+printf("\nAddress of c:");
+printf("%d", &c);
+printf("\nValue of c:");
+printf("%c", c);
+
+// Type conversion
+a1 = 5;
+a2 = 2;
+// b = a1 / a2;
+b = (float) a1 / a2;
+
+printf("\nValue of b:");
+printf("%.2f", b);
+
+printf("\nValue of b:");
+printf("%d", (int)b);
+
+printf("\nValue of a3:");
+printf("%d", a3);
+
+// Arithmatic operators: +, -, * and / , %
+
+a = a1 + a2;
+
+printf("\nAddition of a1 and a2:");
+printf("%d", a);
+
+a = a1 - a2;
+
+printf("\nSubtraction of a1 and a2:");
+printf("%d", a);
+
+printf("\nMultiplication of a1 and a2:");
+printf("%d", a1 * a2);
+
+b = 10;
+// Control statement
+if (a > b)
+{
+printf("\n%d", a);
+printf("\nTrue");
+}
+else if (a < b)
+{
+printf("\n%d", a);
+printf("\n%f", b);
+printf("\nTrue");
+}
+else
+{
+printf("\n%d", b);
+printf("\nFalse");
+}
+
+{
+auto int b1 = 1000;
+printf("\nThe value of b1 inside a block : ");
+printf("%d", b1);
+}
+
+{
+auto int b1 = 5000;
+printf("\nThe value of b1 inside a block : ");
+printf("%d", b1);
+}
+
+printf("\nThe value of b1 inside start of main function : ");
+printf("%d", b1);
+
+a1 = 10;
+b1 = 20;
+
+for (i = 0; i <= 10; i++) {
+a2 = add_fun(a1, b1);
+}
+printf("\nThe updated value of glob_var:");
+printf("%d", glob_var);
+
+}
+
+
+// Definitions of subfunctions
+
+// Function definition of add_fun
+int add_fun(int val1, int val2)
+{
+static int res;
+res = val1 + val2 + res;
+printf("\n Result of addition: %d", res);
+//printf("%d", glob_var);
+//printf("\nThe updated value of glob_var:" );
+//printf("%d", glob_var);
+glob_var = 25000;
+return res;
+}
